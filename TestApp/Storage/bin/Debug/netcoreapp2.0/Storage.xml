@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Storage</name>
+    </assembly>
+    <members>
+        <member name="T:Storage.Abstractions.IBaseEntity`1">
+            <summary>
+            IBaseEntity
+            </summary>
+            <typeparam name="TKey"></typeparam>
+        </member>
+        <member name="P:Storage.Abstractions.IBaseEntity`1.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="T:Storage.Abstractions.IItemRepository">
+            <summary>
+            IItemRepository
+            </summary>
+        </member>
+        <member name="T:Storage.Abstractions.IRepository`2">
+            <summary>
+            IRepository
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TKey"></typeparam>
+        </member>
+        <member name="P:Storage.Abstractions.IRepository`2.Items">
+            <summary>
+            Get items
+            </summary>
+        </member>
+        <member name="P:Storage.Abstractions.IRepository`2.ItemsAsNoTracking">
+            <summary>
+            Gets items with "no tracking" enabled (EF feature) Use it only when you load record(s) only for read-only operations
+            </summary>
+        </member>
+        <member name="M:Storage.Abstractions.IRepository`2.AnyAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Threading.CancellationToken)">
+            <summary>
+            Check any
+            </summary>
+            <param name="filter">The filter.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Storage.Abstractions.IRepository`2.GetAllAsync(System.Threading.CancellationToken)">
+            <summary>
+            Return all elements from db
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns>Collection</returns>
+        </member>
+        <member name="M:Storage.Abstractions.IRepository`2.GetAllAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Threading.CancellationToken)">
+            <summary>
+            Gets all asynchronous.
+            </summary>
+            <param name="filter">The filter.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Storage.Abstractions.IRepository`2.FindAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Threading.CancellationToken)">
+            <summary>
+            Find entity by identifier
+            </summary>
+            <param name="filter">The filter.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>
+            Entity with specified identifier
+            </returns>
+        </member>
+        <member name="M:Storage.Abstractions.IRepository`2.GetByIdAsync(`1,System.Threading.CancellationToken)">
+            <summary>
+            Get entity by identifier
+            </summary>
+            <param name="id">The identifier.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>
+            Entity with passed id
+            </returns>
+        </member>
+        <member name="M:Storage.Abstractions.IRepository`2.InsertAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Insert specified item to context
+            </summary>
+            <param name="entity">Item to insert</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Storage.Abstractions.IRepository`2.InsertAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)">
+            <summary>
+            Insert all specified entities to context
+            </summary>
+            <param name="entities">Items to insert</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Storage.Abstractions.IRepository`2.UpdateAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Update specified entity in context
+            </summary>
+            <param name="entity">Entity to update</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Storage.Abstractions.IRepository`2.DropCollection(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Delete specified entity
+            </summary>
+            <param name="collection">Entity to update</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Storage.Abstractions.IRepository`2.DeleteAsync(`0,System.Threading.CancellationToken)">
+            <summary>
+            Delete specified entity
+            </summary>
+            <param name="entity">Entity to update</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Storage.Abstractions.IRepository`2.DeleteManyAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Threading.CancellationToken)">
+            <summary>
+            Delete entity on context save
+            </summary>
+            <param name="filter">The filter.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Count of removed items</returns>
+        </member>
+        <member name="T:Storage.BaseRepository`2">
+            <summary>
+            Abstract repository that works in any context
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TKey">The type of the key.</typeparam>
+        </member>
+        <member name="P:Storage.BaseRepository`2.Context">
+            <summary>
+                Gets or sets the db context.
+            </summary>
+            <value>
+                The context.
+            </value>
+        </member>
+        <member name="P:Storage.BaseRepository`2.ItemsAsNoTracking">
+            <inheritdoc />
+        </member>
+        <member name="M:Storage.BaseRepository`2.GetAllAsync(System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Storage.BaseRepository`2.GetAllAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Storage.BaseRepository`2.FindAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Storage.BaseRepository`2.GetByIdAsync(`1,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Storage.BaseRepository`2.InsertAsync(`0,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Storage.BaseRepository`2.InsertAsync(System.Collections.Generic.IEnumerable{`0},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Storage.BaseRepository`2.UpdateAsync(`0,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Storage.BaseRepository`2.DropCollection(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Storage.BaseRepository`2.DeleteAsync(`0,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Storage.BaseRepository`2.DeleteManyAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Storage.BaseRepository`2.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="!:EfEfRepository&lt;T&gt;" /> class.
+            </summary>
+        </member>
+        <member name="T:Storage.EfRepository`2">
+            <inheritdoc/>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TKey"></typeparam>
+            <seealso cref="T:Storage.Abstractions.IRepository`2" />
+        </member>
+        <member name="P:Storage.EfRepository`2.Context">
+            <inheritdoc />
+        </member>
+        <member name="M:Storage.EfRepository`2.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <inheritdoc />
+            <summary>
+                Initializes a new instance of the <see cref="!:" /> class.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="logger">The logger.</param>
+        </member>
+        <member name="T:Storage.Factories.ItemFactory">
+            <summary>
+            ItemFactory
+            </summary>
+        </member>
+        <member name="M:Storage.Factories.ItemFactory.CreateDto(Storage.Models.ItemEntity)">
+            <summary>
+            CreateDto
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Storage.Factories.ItemFactory.CreateDto(System.Collections.Generic.IEnumerable{Storage.Models.ItemEntity})">
+            <summary>
+            CreateDto
+            </summary>
+            <param name="entities"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Storage.Factories.ItemFactory.CreateEntity(Storage.Models.ItemDto)">
+            <summary>
+            CreateEntity
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Storage.Factories.ItemFactory.CreateEntity(System.Collections.Generic.IEnumerable{Storage.Models.ItemDto})">
+            <summary>
+            CreateEntity
+            </summary>
+            <param name="entities"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Storage.ItemRepository">
+            <summary>
+            ItemRepository
+            </summary>
+        </member>
+        <member name="P:Storage.ItemRepository.Context">
+            <summary>
+            Context
+            </summary>
+        </member>
+        <member name="M:Storage.ItemRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            the ctor
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Storage.ItemsContext">
+            <summary>
+            ItemsContext
+            </summary>
+        </member>
+        <member name="M:Storage.ItemsContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            OnConfiguring
+            </summary>
+            <param name="optionsBuilder"></param>
+        </member>
+        <member name="P:Storage.ItemsContext.Items">
+            <summary>
+            Items
+            </summary>
+        </member>
+        <member name="T:Storage.Models.ItemDto">
+            <summary>
+            ItemDto
+            </summary>
+        </member>
+        <member name="P:Storage.Models.ItemDto.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Storage.Models.ItemDto.ItemName">
+            <summary>
+            Item name
+            </summary>
+        </member>
+        <member name="P:Storage.Models.ItemDto.ItemType">
+            <summary>
+            Item type
+            </summary>
+        </member>
+        <member name="T:Storage.Models.ItemEntity">
+            <summary>
+            ItemEntity
+            </summary>
+        </member>
+        <member name="P:Storage.Models.ItemEntity.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:Storage.Models.ItemEntity.ItemName">
+            <summary>
+            Item name
+            </summary>
+        </member>
+        <member name="P:Storage.Models.ItemEntity.ItemType">
+            <summary>
+            Item type
+            </summary>
+        </member>
+    </members>
+</doc>

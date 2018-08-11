@@ -1,0 +1,10 @@
+C:\Users\tkach\source\repos\TestApp\Storage\bin\Debug\netcoreapp2.0\Storage.deps.json
+C:\Users\tkach\source\repos\TestApp\Storage\bin\Debug\netcoreapp2.0\Storage.dll
+C:\Users\tkach\source\repos\TestApp\Storage\bin\Debug\netcoreapp2.0\Storage.pdb
+C:\Users\tkach\source\repos\TestApp\Storage\obj\Debug\netcoreapp2.0\Storage.csproj.CoreCompileInputs.cache
+C:\Users\tkach\source\repos\TestApp\Storage\obj\Debug\netcoreapp2.0\Storage.AssemblyInfoInputs.cache
+C:\Users\tkach\source\repos\TestApp\Storage\obj\Debug\netcoreapp2.0\Storage.AssemblyInfo.cs
+C:\Users\tkach\source\repos\TestApp\Storage\obj\Debug\netcoreapp2.0\Storage.dll
+C:\Users\tkach\source\repos\TestApp\Storage\obj\Debug\netcoreapp2.0\Storage.pdb
+C:\Users\tkach\source\repos\TestApp\Storage\bin\Debug\netcoreapp2.0\Storage.xml
+C:\Users\tkach\source\repos\TestApp\Storage\obj\Debug\netcoreapp2.0\Storage.csprojAssemblyReference.cache
